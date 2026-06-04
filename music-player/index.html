@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="player-container">
+        <div class="player-header">
+            <button id="playlist-btn" class="icon-btn"><i class="fas fa-list"></i></button>
+            <span>Now Playing</span>
+            <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+        </div>
+
+        <div class="cover-art">
+            <img id="cover-img" src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=400&q=80" alt="Cover Art">
+        </div>
+
+        <div class="song-info">
+            <h2 id="title">Song Title</h2>
+            <p id="artist">Artist Name</p>
+        </div>
+
+        <div class="progress-container">
+            <div class="time-info">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+            <input type="range" id="progress-bar" min="0" max="100" value="0">
+        </div>
+
+        <div class="controls">
+            <button id="prev-btn" class="control-btn"><i class="fas fa-step-backward"></i></button>
+            <button id="play-btn" class="control-btn play-btn"><i class="fas fa-play"></i></button>
+            <button id="next-btn" class="control-btn"><i class="fas fa-step-forward"></i></button>
+        </div>
+
+        <div class="volume-container">
+            <i class="fas fa-volume-down" id="mute-icon"></i>
+            <input type="range" id="volume-bar" min="0" max="100" value="100">
+        </div>
+
+        <!-- Playlist Overlay -->
+        <div class="playlist-overlay" id="playlist">
+            <div class="playlist-header">
+                <h3>My Playlist</h3>
+                <button id="close-playlist" class="icon-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <ul id="playlist-list">
+                <!-- Dynamically populated -->
+            </ul>
+        </div>
+    </div>
+
+    <audio id="audio-element"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

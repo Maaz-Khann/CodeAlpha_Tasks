@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1>Discover Collection</h1>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="cars">Cars</button>
+            <button class="filter-btn" data-filter="architecture">Architecture</button>
+        </div>
+    </header>
+
+    <main class="gallery-container">
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="nature">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80" alt="Nature Forest">
+                <div class="overlay"><span>Nature</span></div>
+            </div>
+            <div class="gallery-item" data-category="cars">
+                <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80" alt="Classic Car">
+                <div class="overlay"><span>Cars</span></div>
+            </div>
+            <div class="gallery-item" data-category="architecture">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Modern Building">
+                <div class="overlay"><span>Architecture</span></div>
+            </div>
+            <div class="gallery-item" data-category="nature">
+                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&q=80" alt="Mountain Landscape">
+                <div class="overlay"><span>Nature</span></div>
+            </div>
+            <div class="gallery-item" data-category="cars">
+                <img src="https://images.unsplash.com/photo-1503376710356-78e7d2bb95f3?w=800&q=80" alt="Sports Car">
+                <div class="overlay"><span>Cars</span></div>
+            </div>
+            <div class="gallery-item" data-category="architecture">
+                <img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?w=800&q=80" alt="City Architecture">
+                <div class="overlay"><span>Architecture</span></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-btn" id="close-btn"><i class="fas fa-times"></i></button>
+        <button class="nav-btn prev-btn" id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+        
+        <div class="lightbox-content">
+            <img src="" alt="Fullscreen Image" id="lightbox-img">
+        </div>
+        
+        <button class="nav-btn next-btn" id="next-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

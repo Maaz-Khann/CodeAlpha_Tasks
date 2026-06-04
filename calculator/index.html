@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=San+Francisco:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="display" id="display">0</div>
+            <div class="keypad">
+                <button class="btn function" id="clear">AC</button>
+                <button class="btn function" id="sign">+/-</button>
+                <button class="btn function" id="percent">%</button>
+                <button class="btn operator" data-action="÷">÷</button>
+                
+                <button class="btn number">7</button>
+                <button class="btn number">8</button>
+                <button class="btn number">9</button>
+                <button class="btn operator" data-action="×">×</button>
+                
+                <button class="btn number">4</button>
+                <button class="btn number">5</button>
+                <button class="btn number">6</button>
+                <button class="btn operator" data-action="-">−</button>
+                
+                <button class="btn number">1</button>
+                <button class="btn number">2</button>
+                <button class="btn number">3</button>
+                <button class="btn operator" data-action="+">+</button>
+                
+                <button class="btn number zero">0</button>
+                <button class="btn number">.</button>
+                <button class="btn operator equals" id="equals">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

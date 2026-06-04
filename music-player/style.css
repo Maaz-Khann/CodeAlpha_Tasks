@@ -1,0 +1,284 @@
+:root {
+    --bg-main: #121212;
+    --player-bg: #181818;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --accent: #1db954; /* Spotify green style */
+    --hover-bg: #282828;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-primary);
+}
+
+.player-container {
+    background-color: var(--player-bg);
+    width: 350px;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.player-header span {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.icon-btn:hover {
+    color: var(--text-primary);
+}
+
+.cover-art {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.cover-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.song-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.song-info h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-info p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-bottom: 20px;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #404040;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--text-primary);
+    cursor: pointer;
+    transition: transform 0.1s;
+    opacity: 0;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    opacity: 1;
+}
+
+input[type="range"]:hover {
+    background: var(--accent);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.control-btn:hover {
+    transform: scale(1.1);
+    color: var(--accent);
+}
+
+.play-btn {
+    width: 60px;
+    height: 60px;
+    background: var(--text-primary);
+    color: var(--bg-main);
+    border-radius: 50%;
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px; /* Offset for play triangle visually */
+}
+
+.play-btn.playing {
+    padding-left: 0; /* reset for pause icon */
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+    background: var(--accent);
+    color: var(--text-primary);
+}
+
+/* Volume */
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+}
+
+.volume-container i {
+    font-size: 0.9rem;
+    width: 20px;
+}
+
+/* Playlist Overlay */
+.playlist-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: var(--player-bg);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 20px;
+    transition: bottom 0.3s ease-in-out;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist-overlay.active {
+    bottom: 0;
+}
+
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#playlist-list {
+    list-style: none;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Custom Scrollbar for playlist */
+#playlist-list::-webkit-scrollbar {
+    width: 6px;
+}
+#playlist-list::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 3px;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 5px;
+}
+
+.playlist-item:hover {
+    background: var(--hover-bg);
+}
+
+.playlist-item.active {
+    background: rgba(29, 185, 84, 0.2);
+}
+
+.playlist-item.active .playlist-info h4 {
+    color: var(--accent);
+}
+
+.playlist-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.playlist-info h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.playlist-info p {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
