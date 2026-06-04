@@ -1,3 +1,4 @@
+console.log("testing update");
 class Calculator {
     constructor(displayElement) {
         this.displayElement = displayElement;
