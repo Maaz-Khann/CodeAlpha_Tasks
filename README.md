@@ -76,3 +76,27 @@ This internship helped in gaining practical knowledge of:
 ---
 
 ## Repository Structure
+
+calculator/
+image-gallery/
+music-player/
+portfolio/
+
+
+---
+
+## Internship Details
+- Internship Name: Frontend Development Internship  
+- Organization: CodeAlpha  
+- Mode: Remote  
+- Tasks Completed: 4 Projects  
+
+---
+
+## Submission Status
+All assigned tasks have been completed and submitted as per internship requirements.
+
+---
+
+## Author
+Maaz Khan
