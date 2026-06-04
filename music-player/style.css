@@ -16,6 +16,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-main);
+    background-image: url('music_bg.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
